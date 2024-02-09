@@ -2,8 +2,7 @@
  * USE CASE
  * 1/ [MAIN] User login --> [NOTIFICATION] Write in DB
  * 2/ [MAIN] User publish a post --> [SOCIAL] A post is published to FB and Twitter
- * 3/ [SOCIAL] A post is published --> [MAIN] Get the list of users to notify
- * 4/ [SOCIAL] A post is published --> [NOTIFICATION] Notify all users
+ * 3/ [SOCIAL] A post is published --> [NOTIFICATION] Notify all users
  */
 
 import { connect, JSONCodec } from "nats";
