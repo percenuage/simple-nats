@@ -1,0 +1,19 @@
+{
+  "name": "simple-nats",
+  "version": "1.0.0",
+  "description": "Simple Node App for testing CI/CD with K8S. Should be deleted on 01/06/2020",
+  "main": "bin/server.js",
+  "scripts": {
+    "start": "node --no-warnings .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "*",
+    "morgan": "*",
+    "nats": "*"
+  }
+}

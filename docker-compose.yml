@@ -1,0 +1,49 @@
+version: "3.5"
+services:
+  nats:
+    image: nats:2.10.9
+    ports:
+      - "4222:4222"
+      - "6222:6222"
+      - "8222:8222"
+    networks: ["nats"]
+
+  main:
+    build:
+      context: .
+    command: "npm start main"
+    environment:
+      NATS_URL: "nats://nats:4222"
+      API_ENABLED: "true"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - nats
+    networks: [ "nats" ]
+
+  social:
+    build:
+      context: .
+    command: "npm start social"
+    environment:
+      NATS_URL: "nats://nats:4222"
+    deploy:
+      mode: replicated
+      replicas: 2
+    depends_on:
+      - nats
+    networks: [ "nats" ]
+
+  notification:
+    build:
+      context: .
+    command: "npm start notification"
+    environment:
+      NATS_URL: "nats://nats:4222"
+    depends_on:
+      - nats
+    networks: [ "nats" ]
+
+networks:
+  nats:
+    name: nats

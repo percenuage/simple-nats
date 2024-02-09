@@ -1,0 +1,5 @@
+[
+  { "id": 0, "name": "Tony Stark", "tags": ["Iron Man", "Marvel", "Rich", "Avengers"] },
+  { "id": 1, "name": "Bruce Wayne", "tags": ["Batman", "DC", "Rich", "Justice League", "Batmobile"] },
+  { "id": 2, "name": "Thanos", "tags": ["Mad Titan","Infinite Gauntlet", "Snap", "Marvel", "Eternal"] }
+]
